@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.gustu.myapplication.data.model.ResultsItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:elevation="1dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgPeople"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvItemNamaPeople"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.name.first}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvItemEmailPeople"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.email}" />
+
+            <TextView
+                android:id="@+id/tvItemPhonePeople"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.phone.toString()}" />
+            <TextView
+                android:id="@+id/tvItemAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.dob.age.toString()}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
